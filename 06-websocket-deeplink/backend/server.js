@@ -12,7 +12,8 @@ const crypto = require('crypto');
 const { WebSocketServer } = require('ws');
 
 const PORT = process.env.PORT || 5000;
-const SECRET = process.env.JWT_SECRET || 'chat-secret';
+// Secreto JWT: definir JWT_SECRET en el entorno (ver .env.example). Si falta, se genera uno aleatorio por ejecución.
+const SECRET = process.env.JWT_SECRET || require('crypto').randomBytes(32).toString('hex');
 const PUBLIC_URL = process.env.PUBLIC_URL || 'https://chat.ejemplo.com';
 const ANDROID_PACKAGE = process.env.ANDROID_PACKAGE || 'com.example.chat_realtime';
 const ANDROID_SHA256 = process.env.ANDROID_SHA256 || 'AA:BB:CC:...'; // keytool -list -v -keystore ...

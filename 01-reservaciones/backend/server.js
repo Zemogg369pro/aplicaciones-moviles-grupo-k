@@ -9,7 +9,8 @@ const path = require('path');
 const crypto = require('crypto');
 
 const PORT = process.env.PORT || 3000;
-const SECRET = process.env.JWT_SECRET || 'reservaciones-secret';
+// Secreto JWT: definir JWT_SECRET en el entorno (ver .env.example). Si falta, se genera uno aleatorio por ejecución.
+const SECRET = process.env.JWT_SECRET || require('crypto').randomBytes(32).toString('hex');
 const DB_FILE = path.join(__dirname, 'db.json');
 
 let db = { users: [], establishments: [], services: [], reservations: [], notifications: [] };
