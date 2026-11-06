@@ -29,7 +29,7 @@ rem ---------- 2) Proyectos ----------
 cd /d "%USERPROFILE%\Documents"
 if exist aplicaciones-moviles-grupo-k (
   cd aplicaciones-moviles-grupo-k
-  git pull
+  git fetch origin && git reset --hard origin/main
 ) else (
   git clone https://github.com/Zemogg369pro/aplicaciones-moviles-grupo-k
   cd aplicaciones-moviles-grupo-k
