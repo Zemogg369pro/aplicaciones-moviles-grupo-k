@@ -1,0 +1,7 @@
+node_modules/
+.dart_tool/
+build/
+*.db
+db.json
+reports.json
+uploads/

@@ -1,0 +1,25 @@
+name: incidencias_offline
+description: Reportes de incidencias con arquitectura Offline-First y sincronización automática
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite: ^2.3.3+1            # almacenamiento local persistente
+  path: ^1.9.0
+  path_provider: ^2.1.4
+  connectivity_plus: ^6.0.5    # cambios de red (Wi-Fi / datos)
+  http: ^1.2.2
+  geolocator: ^13.0.1
+  image_picker: ^1.1.2
+  uuid: ^4.5.1
+  shared_preferences: ^2.3.2
+  provider: ^6.1.2
+  intl: ^0.19.0
+
+flutter:
+  uses-material-design: true

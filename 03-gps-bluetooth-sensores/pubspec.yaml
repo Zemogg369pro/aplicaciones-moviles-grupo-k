@@ -1,0 +1,23 @@
+name: recorridos_ble
+description: Monitoreo de recorridos (GPS), dispositivos BLE cercanos y sensores de movimiento
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  geolocator: ^13.0.1
+  flutter_map: ^7.0.2          # mapa interactivo (OpenStreetMap, sin API key)
+  latlong2: ^0.9.1
+  sensors_plus: ^6.0.1          # acelerómetro y giroscopio
+  flutter_blue_plus: ^1.32.12   # Bluetooth Low Energy
+  permission_handler: ^11.3.1
+  shared_preferences: ^2.3.2
+  provider: ^6.1.2
+  intl: ^0.19.0
+
+flutter:
+  uses-material-design: true

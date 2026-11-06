@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Reservaciones BLoC",
+    "slug": "reservaciones-bloc",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "extra": { "apiUrl": "http://192.168.1.100:3000" }
+  }
+}

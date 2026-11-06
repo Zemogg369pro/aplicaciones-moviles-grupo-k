@@ -1,0 +1,25 @@
+name: chat_realtime
+description: Mensajería instantánea con WebSockets y Deep Linking (App Links / Universal Links)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  web_socket_channel: ^3.0.1
+  http: ^1.2.2
+  app_links: ^6.3.2          # Android App Links + iOS Universal Links
+  share_plus: ^10.0.2        # compartir enlaces por WhatsApp, correo, etc.
+  image_picker: ^1.1.2
+  file_picker: ^8.1.2
+  url_launcher: ^6.3.0
+  shared_preferences: ^2.3.2
+  provider: ^6.1.2
+  uuid: ^4.5.1
+  intl: ^0.19.0
+
+flutter:
+  uses-material-design: true

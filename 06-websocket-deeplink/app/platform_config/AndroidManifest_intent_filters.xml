@@ -1,0 +1,22 @@
+<!-- Pegar dentro de <activity android:name=".MainActivity" ...> en android/app/src/main/AndroidManifest.xml -->
+<!-- Android App Links (HTTPS verificados con /.well-known/assetlinks.json) -->
+<intent-filter android:autoVerify="true">
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="https" android:host="chat.ejemplo.com" android:pathPrefix="/chat" />
+    <data android:scheme="https" android:host="chat.ejemplo.com" android:pathPrefix="/join" />
+</intent-filter>
+<!-- Esquema propio para pruebas locales: adb shell am start -a android.intent.action.VIEW -d "chatapp://chat/12345" -->
+<intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="chatapp" />
+</intent-filter>
+<!-- Desactiva el manejo de deep links de Flutter para que app_links los reciba -->
+<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
+
+<!-- Fuera de <activity>, en <manifest>: -->
+<!-- <uses-permission android:name="android.permission.INTERNET"/> -->
+<!-- y en <application>: android:usesCleartextTraffic="true" (servidor local por HTTP) -->
