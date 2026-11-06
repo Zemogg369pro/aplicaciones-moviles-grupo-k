@@ -239,7 +239,7 @@ class _ReportFormState extends State<ReportForm> {
         child: ListView(padding: const EdgeInsets.all(16), children: [
           TextFormField(controller: title, decoration: const InputDecoration(labelText: 'Título'), validator: (v) => (v ?? '').trim().isEmpty ? 'Requerido' : null),
           TextFormField(controller: desc, decoration: const InputDecoration(labelText: 'Descripción'), maxLines: 3, validator: (v) => (v ?? '').trim().isEmpty ? 'Requerido' : null),
-          DropdownButtonFormField(value: category, decoration: const InputDecoration(labelText: 'Categoría'),
+          DropdownButtonFormField(initialValue: category, decoration: const InputDecoration(labelText: 'Categoría'),
               items: categories.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(), onChanged: (v) => setState(() => category = v!)),
           const SizedBox(height: 12),
           if (photoPath != null) ClipRRect(borderRadius: BorderRadius.circular(8), child: Image.file(File(photoPath!), height: 200, fit: BoxFit.cover)),

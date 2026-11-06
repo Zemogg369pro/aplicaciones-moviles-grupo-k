@@ -109,7 +109,7 @@ class _PostFormScreenState extends State<PostFormScreen> {
           TextFormField(controller: desc, decoration: const InputDecoration(labelText: 'Descripción (color, marca, señas)'), maxLines: 3,
               validator: (v) => (v ?? '').trim().length < 10 ? 'Describe con al menos 10 caracteres' : null),
           DropdownButtonFormField<String>(
-            value: category,
+            initialValue: category,
             decoration: const InputDecoration(labelText: 'Categoría'),
             items: categories.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
             onChanged: (v) => setState(() => category = v!),

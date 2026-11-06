@@ -103,7 +103,7 @@ class _FeedTabState extends State<FeedTab> {
           child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('Filtros', style: Theme.of(ctx).textTheme.titleLarge),
             DropdownButtonFormField<String?>(
-              value: category,
+              initialValue: category,
               decoration: const InputDecoration(labelText: 'Categoría'),
               items: [const DropdownMenuItem(value: null, child: Text('Todas')), ...categories.map((c) => DropdownMenuItem(value: c, child: Text(c)))],
               onChanged: (v) => setM(() => category = v),
