@@ -126,8 +126,9 @@ $apps = @(
 foreach ($a in $apps) {
   Push-Location "$repo\$($a[0])"
   Log "Compilando $($a[0])..."
-  $def = if ($a[1]) { @("--dart-define=API_URL=$($a[1])") } else { @() }
-  $out = flutter build apk --debug @def 2>&1
+  $fargs = [System.Collections.Generic.List[string]]@('build', 'apk', '--debug')
+  if ($a[1]) { $fargs.Add("--dart-define=API_URL=$($a[1])") }
+  $out = & flutter $fargs.ToArray() 2>&1
   $apk = 'build\app\outputs\flutter-apk\app-debug.apk'
   if (Test-Path $apk) {
     & $adb install -r $apk | Out-Null
